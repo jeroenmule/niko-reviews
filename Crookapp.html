@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crook App</title>
+    <style>
+        #slideholder1 {
+            height: 450px;
+            width: 600px;
+        }
+
+        #slideholder2 {
+            height: 450px;
+            width: 600px;
+        }
+
+        #slideholder3 {
+            height: 450px;
+            width: 600px;
+        }
+    </style>
+</head>
+<body>
+<div id="slideholder1"></div>
+<script>
+    var plaatjes1 = [1, 2, 3];
+    var plaatjes2 = [1, 2, 3];
+    var plaatjes3 = [1, 2, 3];
+    var teller1 = 0;
+    var teller = 0;
+    var teller2 = 0;
+    var slideholder = document.getElementById("slideholder1");
+    slideholder.style.backgroundImage = "url('img/Eyes1.png')";
+    var sildeholder1 = document.getElementById("slideholder2");
+    slideholder1.style.backgroundImage = "url('img/Smile1.jpg')";
+    var slideholder2 = document.getElementById("slideholder3");
+    slideholder2.style.backgroundImage = "url('img/Nose1.jpg')";
+
+    slideholder.addEventListener("click", function () {
+        slideholder.style.backgroundImage = "url('img/Eyes" + changeeyes() + ".png')";
+    });
+    slideholder1.addEventListener("click", function () {
+        sildeholder1.style.backgroundImage = "url('img/Smile" + changemouth() + ".jpg')";
+    });
+    slideholder2.addEventListener("click", function () {
+        slideholder2.style.backgroundImage = "url('img/Nose" + changenose() + ".jpg')";
+
+    });
+
+    function changeeyes() {
+        if (teller >= plaatjes1.length) {
+            teller = 0;
+        }
+        teller++;
+        console.log(teller);
+        return teller;
+
+    }
+
+    function changenose() {
+        if (teller2 >= plaatjes3.length) {
+            teller2 = 0;
+        }
+        teller2++;
+        console.log(teller2);
+        return teller2;
+
+    }
+
+    function changemouth() {
+        if (teller1 >= plaatjes2.length) {
+            teller1 = 0;
+        }
+        teller1++;
+        console.log(teller);
+        return teller1;
+    }
+</script>
+
+</body>
+</html>
